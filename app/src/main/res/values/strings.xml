@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">HouseDog</string>
+    <string name="StartButton">Start</string>
+    <string name="StopButton">Stop</string>
+    <string name="AutoWarningOn">Auto Warning: On</string>
+    <string name="AutoWarningOff">Auto Warning: Off</string>
+    <string name="StartStreaming">Start Streaming</string>
+    <string name="StopStreaming">Stop Streaming</string>
+</resources>
