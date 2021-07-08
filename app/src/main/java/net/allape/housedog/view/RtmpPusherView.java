@@ -15,6 +15,7 @@ import android.util.Log;
 import androidx.annotation.NonNull;
 import androidx.annotation.RequiresApi;
 
+import org.bytedeco.ffmpeg.global.avcodec;
 import org.bytedeco.javacv.FFmpegFrameRecorder;
 import org.bytedeco.javacv.Frame;
 import org.bytedeco.javacv.FrameRecorder;
@@ -105,9 +106,11 @@ public class RtmpPusherView extends androidx.appcompat.widget.AppCompatTextView 
 
             try {
                 recorder = new FFmpegFrameRecorder(url, width, height, 1);
-                recorder.setFormat("flv");
+                recorder.setFormat("mp4");
                 recorder.setFrameRate(frameRate);
                 recorder.setSampleRate(audioRateInHz);
+                recorder.setVideoCodec(avcodec.AV_CODEC_ID_H264);
+                recorder.setAudioCodec(avcodec.AV_CODEC_ID_AAC);
                 Log.v(LOG_TAG, "recorder: " + url + " width: " + width + " height " + height);
                 recorder.start();
             } catch (FFmpegFrameRecorder.Exception e) {
