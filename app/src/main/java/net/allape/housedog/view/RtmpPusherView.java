@@ -106,7 +106,7 @@ public class RtmpPusherView extends androidx.appcompat.widget.AppCompatTextView 
 
             try {
                 recorder = new FFmpegFrameRecorder(url, width, height, 1);
-                recorder.setFormat("mp4");
+                recorder.setFormat("flv");
                 recorder.setFrameRate(frameRate);
                 recorder.setSampleRate(audioRateInHz);
                 recorder.setVideoCodec(avcodec.AV_CODEC_ID_H264);
